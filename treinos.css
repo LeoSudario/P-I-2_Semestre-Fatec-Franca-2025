@@ -1,0 +1,56 @@
+body{
+    background-image: url(imagens/1581284747397.jpg);
+    color: rgb(230, 234, 238);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat; 
+    font-family: monts;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+#treinoSearch{
+    padding: 25px;
+    width: 500px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    font-size: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+#submit{
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+}
+
+#house{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: aliceblue;
+    padding: 50px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    width: 5px;
+    color: rgb(13, 104, 184);
+}
