@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const username = document.getElementById('signupUsername').value;
             const password = document.getElementById('signupPassword').value;
         
-            const response = await fetch('http://localhost:3000/signup', {
+            const response = await fetch('http://localhost:3000/cadastro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -81,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const simbol = document.querySelector('.simbol')
 
     simbol.addEventListener('click',() => {
-        treino.style.display = 'flex';
+        if (treino.style.display === 'flex') {
+            treino.style.display = 'none';
+        } else {
+            treino.style.display = 'flex';
+        }
     })
     
     function resetWarnings() {
