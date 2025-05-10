@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM fully loaded and script running...");
-
+   
     const loginForm = document.getElementById('loginForm');
     const signUpForm = document.getElementById('signUpForm');
 
