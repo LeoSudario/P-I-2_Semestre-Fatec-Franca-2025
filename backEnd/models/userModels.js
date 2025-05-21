@@ -13,4 +13,17 @@ function login(username, callback){
     });
 }
 
-module.exports = { signin, login };
+function academias(nomeAcademia, endereco, callback){
+    const sql = 'INSERT INTO academias (nome_academia, endereco_academia) VALUES (?, ?)';
+    db.query(sql, [nomeAcademia, endereco], callback);
+}
+
+function mostraAcad(callback){
+    const sql = 'SELECT nome_academia, endereco_academia FROM academias';
+    db.query(sql, (err, results) => {
+        if (err) return callback(err);
+        callback(null, results);
+    });
+}
+
+module.exports = { signin, login, academias, mostraAcad};

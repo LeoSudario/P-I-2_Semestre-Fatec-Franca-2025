@@ -27,4 +27,22 @@ function login(req, res){
     });
 }
 
-module.exports = { cadastro, login };
+function academias(req, res){
+    const { nomeAcademia, endereco } = req.body;
+    if(!nomeAcademia || !endereco) {
+        return res.status(400).json({ erro: 'Nome e endereço obrigatórios.' });
+    }
+    User.academias(nomeAcademia, endereco, (err) => {
+        if (err) return res.status(500).json({ erro: err.message });
+        res.status(201).json({ message: 'Academia registrada' });
+    });
+}
+
+function mostraAcad(req, res) {
+    User.mostraAcad((err, academias) => {
+        if (err) return res.status(500).json({ erro: err.message });
+        res.status(200).json(academias);
+    });
+}
+
+module.exports = { cadastro, login, academias, mostraAcad};

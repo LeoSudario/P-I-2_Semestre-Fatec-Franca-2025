@@ -5,6 +5,8 @@ const userRoutes = require('./backEnd/routes/userRoutes')
 
 app.use(cors());
 app.use(express.json()); 
+app.use(express.static('public'));
+
 app.use('/', userRoutes)
 
 app.listen(3000, () => {

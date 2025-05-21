@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const welcomeMessage = document.getElementById('Welcome');
     const userPhoto = document.querySelector('#user');
-    if (welcomeMessage) {
+    if(welcomeMessage) {
         const loggedInUser = localStorage.getItem('loggedInUser');
         welcomeMessage.textContent = `Bem-vindo, ${loggedInUser}!`;
         userPhoto.style.display = "flex";
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const simbol = document.querySelector('.simbol')
 
     simbol.addEventListener('click',() => {
-        if (treino.style.display === 'flex') {
+        if(treino.style.display === 'flex') {
             treino.style.display = 'none';
         } else {
             treino.style.display = 'flex';
@@ -42,20 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
         warning2.style.display = 'none';
     }
 
-    if (checar && academi) {
+    if(checar && academi) {
         checar.onclick = function () {
             resetWarnings();
             const now = new Date();
             const hora = now.getHours();
             const opit = academi.value;
             
-            if (hora > 22 || hora < 6) {
+            if(hora > 22 || hora < 6) {
                 warning2.style.display = 'flex';
-            } else {
-                const isPeakHour = hora > 12 && hora <= 21;
-                if (isPeakHour) {
+            }else {
+                const isPeakHour = hora > 12 && hora <= 14;
+                if(isPeakHour) {
                     warning.style.display = 'flex';
-                } else {
+                }else if (isPeakHour > 18){
+                    warning.style.display = 'flex';
+                }
+                else {
                     warning1.style.display = 'flex';
                 }
             }
