@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const result = await response.text();
     
-            if (response.ok) {
+            if(response.ok){
                 alert("Login bem-sucedido!");
                 localStorage.setItem('loggedInUser', username);
                 window.location.href = 'index.html';
-            } else {
+            }else{
                 alert(result);
             }
         });
